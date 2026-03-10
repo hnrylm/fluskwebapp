@@ -11,5 +11,8 @@ def home():
 def about():
     return '<h2>這是關於我頁面！</h2>'
 
+@app.route('/aboutme')
+def aboutme():
+    return '<h2>有关我!</h2>'
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
