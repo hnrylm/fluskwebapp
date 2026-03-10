@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     # 改用 render_template 來讀取 HTML 檔案
-    return render_template('index.html')
+    return render_template('index.html',name='Henry')
 
 @app.route('/about')
 def about():
