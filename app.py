@@ -11,9 +11,6 @@ def home():
 def about():
     return render_template('aboutme.html')
 
-@app.route('/aboutme')
-def aboutme():
-    return '<h2>有关我!</h2>'
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
