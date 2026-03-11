@@ -1,7 +1,7 @@
 img{
-    position: center;
-    border: 1px solid red;
-    
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 body {
     background:lightblue;
