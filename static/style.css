@@ -1,6 +1,7 @@
 img{
     align-items: center;
     border: 1px solid red;
+    width:50%
 }
 body {
     background:lightblue;
