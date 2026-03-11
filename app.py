@@ -3,24 +3,21 @@ from flask import Flask, render_template, request # 這裡要多引入 request
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])      # 根目錄支援 GET 和 POST
-@app.route('/index', methods=['GET', 'POST']) # /index 也支援 GET 和 POST
+
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-    user_name = "Henry" # 預設名字
-    
-    if request.method == 'POST':
-        # 從表單內部 (POST) 拿數據
-        user_name = request.form.get('name', 'Henry')
-    else:
-        # 如果是普通訪問 (GET)，從網址參數拿數據
-        user_name = request.args.get('name', 'Henry')
+        user_name = "Henry" 
         
-    return render_template('index.html', name=user_name)
-
-# @app.route('/')
-# def home():
-#     # 改用 render_template 來讀取 HTML 檔案
-#     return render_template('index.html',name='Henry')
-
+        if request.method == 'POST':
+            user_name = request.form.get('name', 'Henry')
+            # --- 核心修復：寫入檔案必須放在 return 之前，且要有縮進 ---
+            with open("log.txt", "a", encoding="utf-8") as f:
+                f.write(f"新訪客: {user_name}\n")
+            # -----------------------------------------------------
+        else:
+            user_name = request.args.get('name', 'Henry')
+            
+        return render_template('index.html', name=user_name)
 
 
 @app.route('/about')
