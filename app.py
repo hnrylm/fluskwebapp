@@ -1,11 +1,20 @@
-from flask import Flask, render_template  # 記得導入 render_template
+from flask import Flask, render_template, request # 這裡要多引入 request
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    # 改用 render_template 來讀取 HTML 檔案
-    return render_template('index.html',name='Henry')
+@app.route('/index')
+def index():
+    # 這是最核心的動態代碼：從網址參數抓取名字
+    user_name = request.args.get('name', 'Henry')
+    return render_template('index.html', name=user_name)
+
+# @app.route('/')
+# def home():
+#     # 改用 render_template 來讀取 HTML 檔案
+#     return render_template('index.html',name='Henry')
+
+
 
 @app.route('/about')
 def about():

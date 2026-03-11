@@ -15,7 +15,6 @@ body {
     text-align: center;
     width: 350px; /* 你之前满意的宽度 */
 }
-
 /* 针对卡片内的图片进行圆圈处理 */
 .card img {
     width: 200px;           /* 你可以根据需要调整大小 */
@@ -25,7 +24,6 @@ body {
     margin-bottom: 20px;    /* 与下方文字保持间距 */
     border: 3px solid #432993; /* 可选：加个浅色边框，更有质感 */
 }
-
 
 a {
     display: inline-block; /* 允许设置间距 */
@@ -38,12 +36,10 @@ a {
     font-weight: bold;
     transition: 0.3s;          /* 平滑过渡 */
 }
-
 a:hover {
     background-color: #0056b3; /* 鼠标放上去颜色加深 */
     transform: scale(1.05);    /* 微微放大 */
 }
-
 /* 將連結轉換為漂亮按鈕 */
 .card a {
     display: inline-block;
