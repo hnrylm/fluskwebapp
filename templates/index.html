@@ -1,15 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的首頁</title>
+    <!-- 1. 確保這行還在，否則沒顏色 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
+    <!-- 2. 確保所有內容都在這個 card 裡面 -->
     <div class="card">
-    <h1>👋 歡迎來到我的首頁</h1>
-    <!-- 加入這個表單 -->
-    <form action="/" method="get">
-        <input type="text" name="name" placeholder="請輸入你的名字">
-        <button type="submit">更改名字</button>
-    </form>
-    
-    <h2>{{ name }}</h2>
-    <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
-    <br>
-    <a href="/about">關於我</a>
-   </div>
+        <h1>👋 歡迎來到我的首頁</h1>
+        
+<form action="/" method="post">
+    <input type="text" name="name" placeholder="請輸入名字">
+    <button type="submit">更改名字</button>
+</form>
+
+
+        <h2>{{ name }}</h2>
+        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
+        <br>
+        <a href="/about">關於我</a>
+    </div>
 </body>
+</html>
+

@@ -2,11 +2,18 @@ from flask import Flask, render_template, request # 這裡要多引入 request
 
 app = Flask(__name__)
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])      # 根目錄支援 GET 和 POST
+@app.route('/index', methods=['GET', 'POST']) # /index 也支援 GET 和 POST
 def index():
-    # 這是最核心的動態代碼：從網址參數抓取名字
-    user_name = request.args.get('name', 'Henry')
+    user_name = "Henry" # 預設名字
+    
+    if request.method == 'POST':
+        # 從表單內部 (POST) 拿數據
+        user_name = request.form.get('name', 'Henry')
+    else:
+        # 如果是普通訪問 (GET)，從網址參數拿數據
+        user_name = request.args.get('name', 'Henry')
+        
     return render_template('index.html', name=user_name)
 
 # @app.route('/')
