@@ -23,7 +23,7 @@ body {
     border-radius: 50%;     /* 核心代码：让图片变圆 */
     object-fit: cover;      /* 核心代码：防止图片被拉伸变形 */
     margin-bottom: 20px;    /* 与下方文字保持间距 */
-    border: 3px solid #f0f2f5; /* 可选：加个浅色边框，更有质感 */
+    border: 3px solid #432993; /* 可选：加个浅色边框，更有质感 */
 }
 
 
