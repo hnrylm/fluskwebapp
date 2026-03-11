@@ -21,6 +21,22 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* 讓新留言產生時有彈跳滑入效果 */
+.message-card {
+    /* ...保留您原本的樣式... */
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bounceIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.8); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
 
 </style>
 
