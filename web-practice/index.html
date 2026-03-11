@@ -4,18 +4,72 @@
     <meta charset="UTF-8">
     <title>我的留言板練習</title>
     <style>
-        body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
-        .container { width: 100%; max-width: 500px; }
-        
-        /* 留言輸入區 */
-        .input-box { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        textarea { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 10px; box-sizing: border-box; resize: none; }
-        button { background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background: #121212; /* 深黑色背景 */
+        color: #e0e0e0; /* 淺灰色文字 */
+        display: flex; 
+        justify-content: center; 
+        padding: 20px; 
+    }
+    
+    .container { width: 100%; max-width: 550px; }
+    
+    /* 輸入區：改為深灰色卡片 */
+    .input-box { 
+        background: #1e1e1e; 
+        padding: 20px; 
+        border-radius: 12px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+        margin-bottom: 30px; 
+    }
 
-        /* 留言顯示區 */
-        .message-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 10px; border-left: 5px solid #007bff; }
-        .timestamp { font-size: 0.8rem; color: #888; margin-top: 10px; display: block; }
-    </style>
+    textarea { 
+        width: 100%; 
+        background: #2d2d2d; 
+        border: 1px solid #444; 
+        border-radius: 8px; 
+        padding: 12px; 
+        color: white; 
+        box-sizing: border-box; 
+        resize: none; 
+        outline: none;
+    }
+
+    /* 按鈕：改為更顯眼的霓虹色系 */
+    button { 
+        background: #bb86fc; 
+        color: #121212; 
+        font-weight: bold;
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 6px; 
+        cursor: pointer; 
+        margin-top: 15px; 
+        transition: 0.3s;
+    }
+    button:hover { background: #cfabff; transform: translateY(-2px); }
+
+    /* 留言卡片：加上微光邊框 */
+    .message-card { 
+        background: #1e1e1e; 
+        padding: 15px; 
+        border-radius: 12px; 
+        margin-bottom: 15px; 
+        border: 1px solid #333;
+        transition: 0.3s;
+    }
+    .message-card:hover { border-color: #bb86fc; }
+
+    .timestamp { 
+        font-size: 0.75rem; 
+        color: #777; 
+        margin-top: 10px; 
+        display: block; 
+        font-style: italic;
+    }
+</style>
+
 </head>
 <body>
 
