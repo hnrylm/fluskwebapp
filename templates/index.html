@@ -21,23 +21,34 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-/* 讓新留言產生時有彈跳滑入效果 */
+/* 找到你原本的 .message-card 並加入 animation 屬性 */
 .message-card {
-    /* ...保留您原本的樣式... */
-    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+
+    /* 新增這行：呼叫下方的動畫，持續 0.6 秒 */
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
+/* 定義彈跳滑入動畫 */
 @keyframes bounceIn {
     0% { 
         opacity: 0; 
-        transform: translateY(40px) scale(0.8); 
+        transform: translateY(30px) scale(0.9); /* 從下方浮起並縮小 */
+    }
+    70% {
+        transform: translateY(-5px) scale(1.02); /* 稍微彈過頭一點點 */
     }
     100% { 
         opacity: 1; 
-        transform: translateY(0) scale(1); 
+        transform: translateY(0) scale(1); /* 回到原位 */
     }
 }
-
 
 
 </style>
