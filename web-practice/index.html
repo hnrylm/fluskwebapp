@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>我的留言板練習</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
+        .container { width: 100%; max-width: 500px; }
+        
+        /* 留言輸入區 */
+        .input-box { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        textarea { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 10px; box-sizing: border-box; resize: none; }
+        button { background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+
+        /* 留言顯示區 */
+        .message-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 10px; border-left: 5px solid #007bff; }
+        .timestamp { font-size: 0.8rem; color: #888; margin-top: 10px; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-box">
+        <textarea id="msgInput" rows="3" placeholder="想說些什麼嗎？"></textarea>
+        <button onclick="addMessage()">發布留言</button>
+    </div>
+    <div id="board">
+        <!-- 留言會出現在這裡 -->
+    </div>
+</div>
+
+<script>
+    function addMessage() {
+        const input = document.getElementById('msgInput');
+        const board = document.getElementById('board');
+        
+        if (input.value.trim() === "") return;
+
+        // 建立留言卡片
+        const card = document.createElement('div');
+        card.className = 'message-card';
+        
+        // 獲取目前時間戳記
+        const now = new Date().toLocaleString();
+        
+        card.innerHTML = `
+            <p>${input.value}</p>
+            <span class="timestamp">🕒 發布於：${now}</span>
+        `;
+        
+        board.prepend(card); // 新留言放在最上面
+        input.value = ""; // 清空輸入框
+    }
+</script>
+
+</body>
+</html>
