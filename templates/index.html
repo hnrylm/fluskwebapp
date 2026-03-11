@@ -10,7 +10,8 @@
         <p>這是一個從 HTML 模板渲染出來的網頁！</p>
         <a href="/about">關於我</a>
         <h1>{{name}}</h1>
+        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
     </div>
-   <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
+   
 </body>
 </html>
