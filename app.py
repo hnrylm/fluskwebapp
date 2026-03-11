@@ -9,8 +9,11 @@ def home():
 
 @app.route('/about')
 def about():
-    return render_template('aboutme.html')
-
+    # 将个人介绍存入字典
+    user_info = {
+        "description": "在學Python，希望能成為前端和後端programmer。能接freelance專案，在看參考書。"
+    }
+    return render_template('aboutme.html', info=user_info)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
