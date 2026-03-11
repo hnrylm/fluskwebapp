@@ -43,3 +43,21 @@ a:hover {
     background-color: #0056b3; /* 鼠标放上去颜色加深 */
     transform: scale(1.05);    /* 微微放大 */
 }
+
+/* 將連結轉換為漂亮按鈕 */
+.card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #432993; /* 使用與邊框一致的紫色 */
+    color: white !important;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #2a1a5e; /* 滑過時顏色變深 */
+    transform: scale(1.05);    /* 微微放大效果 */
+}
