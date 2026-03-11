@@ -22,8 +22,9 @@ def index():
 
     return render_template('index.html', name=user_name, visitors=recent_visitors)
 
-
-
+@app.route('/web-practice/')
+def index():
+    return render_template('index.html')
 @app.route('/about')
 def about():
     # 将个人介绍存入字典
