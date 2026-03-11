@@ -1,19 +1,4 @@
-<!-- templates/index.html -->
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
 <body>
-    <div class="card">
-        <h1>👋 歡迎來到我的首頁</h1>
-        <p>這是一個從 HTML 模板渲染出來的網頁！</p>
-        
-        <h1>{{name}}</h1>
-        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
-        <a href="/about">關於我</a>
-    </div>
-   
     <div class="card">
     <h1>👋 歡迎來到我的首頁</h1>
     <!-- 加入這個表單 -->
@@ -26,7 +11,5 @@
     <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
     <br>
     <a href="/about">關於我</a>
-</div>
-
+   </div>
 </body>
-</html>

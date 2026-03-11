@@ -57,3 +57,29 @@ a:hover {
     background-color: #2a1a5e; /* 滑過時顏色變深 */
     transform: scale(1.05);    /* 微微放大效果 */
 }
+
+/* 讓輸入框更好看 */
+input {
+    padding: 10px;
+    border-radius: 20px; /* 圓角 */
+    border: 2px solid #432993; /* 紫色邊框 */
+    outline: none;
+    width: 150px;
+}
+
+/* 讓提交按鈕更好看 */
+form button {
+    padding: 10px 15px;
+    background-color: #432993;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #2a1a5e;
+    transform: scale(1.05);
+}
