@@ -1,24 +1,26 @@
-/* 确保链接居中 */
-a {
-    display: block;        /* 变成块级元素，独占一行 */
-    margin-top: 15px;      /* 增加与图片之间的间距 */
-    color: #007bff;        /* 使用经典的蓝色 */
-    text-decoration: none; /* 去掉下划线 */
-    font-weight: bold;
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-/* 鼠标放上去的效果 */
-a:hover {
-    text-decoration: underline;
+/* 必须有这个 .card，HTML 里的 div 才会变回原来的样子 */
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px; /* 你之前满意的宽度 */
 }
 
-/* 统一图片大小 (你喜欢的比例) */
 .card img {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 2px solid #eee;
     object-fit: cover;
-    display: block;        /* 居中必备 */
-    margin: 10px auto;     /* 居中必备 */
+    margin-top: 15px;
 }
