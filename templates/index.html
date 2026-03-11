@@ -14,5 +14,19 @@
         <a href="/about">關於我</a>
     </div>
    
+    <div class="card">
+    <h1>👋 歡迎來到我的首頁</h1>
+    <!-- 加入這個表單 -->
+    <form action="/" method="get">
+        <input type="text" name="name" placeholder="請輸入你的名字">
+        <button type="submit">更改名字</button>
+    </form>
+    
+    <h2>{{ name }}</h2>
+    <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
+    <br>
+    <a href="/about">關於我</a>
+</div>
+
 </body>
 </html>
