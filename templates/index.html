@@ -1,35 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
-    <title>我的首頁</title>
-    <!-- 1. 確保這行還在，否則沒顏色 -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>我的留言板練習</title>
+    <style>
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    padding: 20px; 
+    margin: 0;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+</style>
+
+
 </head>
 <body>
-    <!-- 2. 確保所有內容都在這個 card 裡面 -->
-    <div class="card">
-        <h1>👋 歡迎來到我的首頁</h1>
-                
-        <form action="/" method="post">
-            <input type="text" name="name" placeholder="請輸入名字">
-            <button type="submit">更改名字</button>
-        </form>
 
-
-        <h2>{{ name }}</h2>
-        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
-        <br>
-        <a href="/about">關於我</a>
-
-        <hr>
-        <p style="font-size: 0.8rem; color: #888;">最近訪客：</p>
-        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-            {% for visitor in visitors %}
-                <li>👤 {{ visitor }}</li>
-            {% endfor %}
-        </ul>
-
+<div class="container">
+    <div class="input-box">
+        <textarea id="msgInput" rows="3" placeholder="想說些什麼嗎？"></textarea>
+        <button onclick="addMessage()">發布留言</button>
     </div>
+    <div id="board">
+        <!-- 留言會出現在這裡 -->
+    </div>
+</div>
+
+<script>
+    // 1. 頁面載入時，先從存檔讀取舊留言
+    window.onload = function() {
+        const savedMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
+        savedMessages.forEach(msg => displayMessage(msg.text, msg.time));
+    };
+
+    function addMessage() {
+        const input = document.getElementById('msgInput');
+        const text = input.value.trim();
+        
+        if (text === "") return;
+
+        const time = new Date().toLocaleString();
+        
+        // 2. 顯示在畫面上
+        displayMessage(text, time);
+
+        // 3. 儲存到 localStorage
+        saveToLocal(text, time);
+
+        input.value = ""; 
+    }
+
+    // 負責「畫」出留言卡片的函式
+    function displayMessage(text, time) {
+        const board = document.getElementById('board');
+        const card = document.createElement('div');
+        card.className = 'message-card';
+        card.innerHTML = `
+            <p>${text}</p>
+            <span class="timestamp">🕒 發布於：${time}</span>
+        `;
+        board.prepend(card);
+    }
+
+    // 負責「存」進瀏覽器的函式
+    function saveToLocal(text, time) {
+        const savedMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
+        savedMessages.push({ text, time });
+        localStorage.setItem('myMessages', JSON.stringify(savedMessages));
+    }
+</script>
+
+
 </body>
 </html>
-
