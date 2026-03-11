@@ -1,42 +1,43 @@
-/* 基础重置 */
+/* 优化背景和字体 */
 body {
-    background-color: #f0f2f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
 }
 
-/* 卡片样式 */
+/* 优化卡片 */
 .card {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 柔和阴影 */
     text-align: center;
-    max-width: 350px;
+    max-width: 320px;
     transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* 鼠标悬停微动效果 */
+    transform: translateY(-5px); /* 鼠标悬停互动感 */
 }
 
-/* 头像样式 */
+/* 头像圆化 */
 .card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* 圆形头像 */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #007bff; /* 加个蓝色边框 */
+    margin-bottom: 1.5rem;
     object-fit: cover;
-    border: 4px solid #007bff;
-    margin-bottom: 20px;
 }
 
-/* 文字样式 */
+/* 优化文字排版 */
 p {
-    color: #333;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
 }
