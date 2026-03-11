@@ -6,7 +6,6 @@ body {
     height: 100vh;
     margin: 0;
 }
-
 /* 必须有这个 .card，HTML 里的 div 才会变回原来的样子 */
 .card {
     background: white;
@@ -23,4 +22,21 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-top: 15px;
+}
+
+a {
+    display: inline-block; /* 允许设置间距 */
+    margin-top: 20px;
+    padding: 10px 25px;    /* 增加点击区域 */
+    background-color: #007bff; /* 蓝色背景 */
+    color: white !important;   /* 白色文字 */
+    text-decoration: none;
+    border-radius: 25px;       /* 胶囊形状按钮 */
+    font-weight: bold;
+    transition: 0.3s;          /* 平滑过渡 */
+}
+
+a:hover {
+    background-color: #0056b3; /* 鼠标放上去颜色加深 */
+    transform: scale(1.05);    /* 微微放大 */
 }
