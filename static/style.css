@@ -1,42 +1,34 @@
-/* 基础重置 */
+/* 优化背景 */
 body {
-    background-color: #f0f2f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
+    font-family: 'PingFang SC', "Microsoft YaHei", sans-serif;
 }
 
-/* 卡片样式 */
+/* 优化卡片 */
 .card {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     text-align: center;
-    max-width: 350px;
-    transition: transform 0.3s ease;
+    max-width: 400px;
+    transition: transform 0.3s ease; /* 增加平滑过渡 */
 }
 
+/* 鼠标放上去会有轻微浮动感 */
 .card:hover {
-    transform: translateY(-5px); /* 鼠标悬停微动效果 */
+    transform: translateY(-10px);
 }
 
-/* 头像样式 */
-.card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* 圆形头像 */
-    object-fit: cover;
-    border: 4px solid #007bff;
-    margin-bottom: 20px;
-}
-
-/* 文字样式 */
+/* 优化文字 */
 p {
-    color: #333;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-top: 20px;
 }
