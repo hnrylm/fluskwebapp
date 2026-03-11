@@ -1,4 +1,7 @@
-
-    img{
-        align-items: center;
-    }
+img{
+    align-items: center;
+    border: 1px solid red;
+}
+body {
+    background:lightblue;
+}
