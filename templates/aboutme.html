@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <!-- 确保 filename 路径与左侧目录树一致 -->
+    <meta charset="UTF-8">
+    <title>关于我</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="card">
-        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="我的照片">
-        <br>
-        <p>在學python,希望能成為前端和後端programmer.能接freelance專案. 在看參考書</p>
+        <img src="{{ url_for('static', filename='dummyphoto.jpg') }}" alt="Profile">
+        <p>
+            在學Python, 希望能成為前端和後端programmer。<br>
+            能接freelance專案，在看參考書。
+        </p>
     </div>
 </body>
 </html>
+
 
