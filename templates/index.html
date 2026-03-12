@@ -4,15 +4,7 @@
         <title>Flask 標單測試</title>
     </head>
     <body>
-        <h1>歡迎來到我的Flask 網站</h1>
-        <!--這是 Jinja2 的判斷式:如果名字存在就顯示-->
-        {% if name %}
-        <!-- 在 index.html 找到這一行並加上 style -->
-        <p style="color: blue; font-weight: bold;">你好，{{ name }}！很高興見到你</p>
-
-        {% else %}
-          <p>請輸入你的名字:</p>
-        {% endif %}
+        
     <form action="/" method="post">
         <input type="text" name="user_name" placeholder="輸入名字" required>
         <button type="submit">送出並保存</button>
