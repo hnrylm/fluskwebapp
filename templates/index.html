@@ -1,116 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <title>我的留言板練習</title>
-    <style>
-body { 
-    font-family: 'Segoe UI', sans-serif; 
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    min-height: 100vh;
-    display: flex; 
-    justify-content: center; 
-    padding: 20px; 
-    margin: 0;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-/* 找到你原本的 .message-card 並加入 animation 屬性 */
-.message-card {
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-
-    /* 新增這行：呼叫下方的動畫，持續 0.6 秒 */
-    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-/* 定義彈跳滑入動畫 */
-@keyframes bounceIn {
-    0% { 
-        opacity: 0; 
-        transform: translateY(30px) scale(0.9); /* 從下方浮起並縮小 */
-    }
-    70% {
-        transform: translateY(-5px) scale(1.02); /* 稍微彈過頭一點點 */
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); /* 回到原位 */
-    }
-}
-
-
-</style>
-
-
-</head>
-<body>
-
-<div class="container">
-    <div class="input-box">
-        <textarea id="msgInput" rows="3" placeholder="想說些什麼嗎？"></textarea>
-        <button onclick="addMessage()">發布留言</button>
-    </div>
-    <div id="board">
-        <!-- 留言會出現在這裡 -->
-    </div>
-</div>
-
-<script>
-    // 1. 頁面載入時，先從存檔讀取舊留言
-    window.onload = function() {
-        const savedMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
-        savedMessages.forEach(msg => displayMessage(msg.text, msg.time));
-    };
-
-    function addMessage() {
-        const input = document.getElementById('msgInput');
-        const text = input.value.trim();
-        
-        if (text === "") return;
-
-        const time = new Date().toLocaleString();
-        
-        // 2. 顯示在畫面上
-        displayMessage(text, time);
-
-        // 3. 儲存到 localStorage
-        saveToLocal(text, time);
-
-        input.value = ""; 
-    }
-
-    // 負責「畫」出留言卡片的函式
-    function displayMessage(text, time) {
-        const board = document.getElementById('board');
-        const card = document.createElement('div');
-        card.className = 'message-card';
-        card.innerHTML = `
-            <p>${text}</p>
-            <span class="timestamp">🕒 發布於：${time}</span>
-        `;
-        board.prepend(card);
-    }
-
-    // 負責「存」進瀏覽器的函式
-    function saveToLocal(text, time) {
-        const savedMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
-        savedMessages.push({ text, time });
-        localStorage.setItem('myMessages', JSON.stringify(savedMessages));
-    }
-</script>
-
-
-</body>
+<html>
+    <head>
+        <title>Flask 標單測試</title>
+    </head>
+    <body>
+        <h1>歡迎來到我的Flask 網站</h1>
+        <!--這是 Jinja2 的判斷式:如果名字存在就顯示-->
+        {% if name %}
+          <h2>你好,{{ name }}! 很高興見到你.</h2>
+        {% else %}
+          <p>請輸入你的名字:</p>
+        {% endif %}
+        <form method="POST">
+            <input type="text" name="user_name" placeholder="輸入名字">
+            <button type="submit">送出</button>
+        </form>
+    </body>
 </html>
