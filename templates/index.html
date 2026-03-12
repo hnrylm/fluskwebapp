@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Flask 標單測試</title>
+
     </head>
     <body>
         
@@ -9,5 +10,12 @@
         <input type="text" name="user_name" placeholder="輸入名字" required>
         <button type="submit">送出並保存</button>
     </form>
+ 
+    <h3>最近訪客紀錄：</h3>
+    <ul>
+        {% for line in history %}
+            <li>{{ line }}</li>
+        {% endfor %}
+    </ul>
     </body>
 </html>
